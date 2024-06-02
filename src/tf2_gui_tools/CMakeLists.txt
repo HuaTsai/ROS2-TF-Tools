@@ -13,12 +13,14 @@ list(APPEND CMAKE_AUTOUIC_SEARCH_PATHS ui)
 
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(tf2_msgs REQUIRED)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 include_directories(include)
 
-add_executable(main src/main.cc src/mainwindow.cc)
+add_executable(main src/main.cc src/mainwindow.cc src/comm_node.cc)
 target_link_libraries(main Qt5::Widgets)
+ament_target_dependencies(main rclcpp tf2_msgs)
 
 install(
   TARGETS main

@@ -6,6 +6,8 @@ namespace Ui {
 class MainWindow;
 }
 
+class CommNode;
+
 class MainWindow : public QMainWindow {
 
 public:
@@ -13,8 +15,9 @@ public:
   ~MainWindow();
 
 private:
-  Ui::MainWindow *ui;
+  std::shared_ptr<Ui::MainWindow> ui;
+  std::shared_ptr<CommNode> node;
 
-  // public slots:
-  //   void updateTopicInfo(QString);
+// public slots:
+//   void updateTopicInfo(QString);
 };
