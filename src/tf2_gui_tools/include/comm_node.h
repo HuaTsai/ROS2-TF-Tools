@@ -7,11 +7,14 @@ class CommNode : public rclcpp::Node, public QThread {
 
 public:
   CommNode();
-  void cb();
   void run() override;
+
+  void set_tf_msg(const tf2_msgs::msg::TFMessage &msg);
+  void StartPublish();
+  void StopPublish();
 
 private:
   rclcpp::Publisher<tf2_msgs::msg::TFMessage>::SharedPtr tf_pub_;
-  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr str_pub_;
   rclcpp::TimerBase::SharedPtr timer_;
+  tf2_msgs::msg::TFMessage tf_msg_;
 };

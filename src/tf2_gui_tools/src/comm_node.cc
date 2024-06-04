@@ -2,19 +2,19 @@
 
 CommNode::CommNode() : Node("comm_node") {
   tf_pub_ = create_publisher<tf2_msgs::msg::TFMessage>("tf", 10);
-  str_pub_ = create_publisher<std_msgs::msg::String>("str", 10);
-  timer_ = create_wall_timer(std::chrono::milliseconds(1000),
-                             std::bind(&CommNode::cb, this));
 }
 
-void CommNode::cb() {
-  std_msgs::msg::String msg;
-  static int cnt = 0;
-  msg.data = "Hello, world! #" + std::to_string(++cnt);
-  str_pub_->publish(msg);
-  std::cout << "Published: " << msg.data << std::endl;
+void CommNode::set_tf_msg(const tf2_msgs::msg::TFMessage &msg) {
+  tf_msg_ = msg;
 }
 
-void CommNode::run() {
-  rclcpp::spin(this->get_node_base_interface());
+void CommNode::StartPublish() {
+  timer_ = create_wall_timer(std::chrono::milliseconds(100), [this]() {
+    tf_msg_.transforms[0].header.stamp = now();
+    tf_pub_->publish(tf_msg_);
+  });
 }
+
+void CommNode::StopPublish() { timer_->cancel(); }
+
+void CommNode::run() { rclcpp::spin(this->get_node_base_interface()); }
