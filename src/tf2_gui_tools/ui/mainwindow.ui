@@ -252,6 +252,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="inputMethodHints">
+        <set>Qt::ImhNone</set>
+       </property>
        <property name="text">
         <string>0</string>
        </property>
