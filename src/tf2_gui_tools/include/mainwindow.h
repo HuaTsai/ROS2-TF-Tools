@@ -14,7 +14,7 @@ class CommNode;
 class MainWindow : public QMainWindow {
 
 public:
-  explicit MainWindow(QWidget *parent = nullptr);
+  explicit MainWindow(int id = 0, QWidget *parent = nullptr);
   ~MainWindow();
 
 private:
@@ -22,7 +22,8 @@ private:
   std::shared_ptr<CommNode> node;
   Eigen::Isometry3d tf;
   void ComputeAndUpdateTF();
-  void SendTFHandler();
+  void SendStaticTF();
+  void SendTF();
   void UpdateQuaternionAndMatrix(const Eigen::Isometry3d &tf);
 
 public slots:

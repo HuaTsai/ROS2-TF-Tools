@@ -416,11 +416,6 @@
        </item>
        <item>
         <property name="text">
-         <string>/camera_frame_id</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
          <string>/map</string>
         </property>
        </item>
@@ -432,6 +427,9 @@
         <font>
          <pointsize>14</pointsize>
         </font>
+       </property>
+       <property name="currentText">
+        <string>/camera_frame_id</string>
        </property>
        <property name="currentIndex">
         <number>1</number>
@@ -448,7 +446,17 @@
        </item>
        <item>
         <property name="text">
-         <string>/map</string>
+         <string>/camera_frame_0</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>/camera_frame_1</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>/camera_frame_2</string>
         </property>
        </item>
       </widget>
@@ -466,27 +474,6 @@
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QCheckBox" name="ckb_cont">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>30</y>
-      <width>201</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>14</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>Send TF Continously</string>
-    </property>
-    <property name="checked">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget">
@@ -796,6 +783,57 @@
      <string/>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_sendstf">
+    <property name="geometry">
+     <rect>
+      <x>400</x>
+      <y>20</y>
+      <width>141</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Send Static TF</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_sendtf">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>20</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Send TF</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -803,7 +841,7 @@
      <x>0</x>
      <y>0</y>
      <width>823</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -51,7 +51,7 @@ std::optional<int> ValueToSliderRPY(double value) {
 }
 } // namespace
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(int id, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow) {
   ui->setupUi(this);
   ui->lb_img->setPixmap(QPixmap(":/conan.png")
@@ -80,18 +80,14 @@ MainWindow::MainWindow(QWidget *parent)
   connect(ui->le_rx, &QLineEdit::editingFinished, this, [this]() { UpdateLineEditRPY(ui->le_ry, ui->slider_ry); });
   connect(ui->le_rz, &QLineEdit::editingFinished, this, [this]() { UpdateLineEditRPY(ui->le_rz, ui->slider_rz); });
 
-  connect(ui->ckb_inv, &QCheckBox::stateChanged, this, &MainWindow::ComputeAndUpdateTF);
-  connect(ui->ckb_cont, &QCheckBox::stateChanged, this, &MainWindow::SendTFHandler);
-
-  connect(ui->cb_parent, &QComboBox::currentTextChanged, this, &MainWindow::ComputeAndUpdateTF);
-  connect(ui->cb_child, &QComboBox::currentTextChanged, this, &MainWindow::ComputeAndUpdateTF);
+  connect(ui->btn_sendtf, &QPushButton::clicked, this, &MainWindow::SendTF);
+  connect(ui->btn_sendstf, &QPushButton::clicked, this, &MainWindow::SendStaticTF);
   // clang-format on
 
   rclcpp::init(0, nullptr);
-  node = std::make_shared<CommNode>();
+  node = std::make_shared<CommNode>(id);
   node->start();
   ComputeAndUpdateTF();
-  SendTFHandler();
 }
 
 MainWindow::~MainWindow() { rclcpp::shutdown(); }
@@ -121,12 +117,26 @@ void MainWindow::ComputeAndUpdateTF() {
   node->set_tf_msg(tf_msg);
 }
 
-void MainWindow::SendTFHandler() {
-  if (ui->ckb_cont->isChecked()) {
-    node->StartPublish();
-  } else {
-    node->StopPublish();
-  }
+void MainWindow::SendStaticTF() {
+  ui->btn_sendtf->setEnabled(false);
+  ui->btn_sendstf->setEnabled(false);
+  ui->cb_parent->setEnabled(false);
+  ui->cb_child->setEnabled(false);
+  auto font = ui->btn_sendstf->font();
+  font.setBold(true);
+  ui->btn_sendstf->setFont(font);
+  node->PublishStaticTF();
+}
+
+void MainWindow::SendTF() {
+  ui->btn_sendstf->setEnabled(false);
+  ui->btn_sendtf->setEnabled(false);
+  ui->cb_parent->setEnabled(false);
+  ui->cb_child->setEnabled(false);
+  auto font = ui->btn_sendtf->font();
+  font.setBold(true);
+  ui->btn_sendtf->setFont(font);
+  node->PublishTF();
 }
 
 void MainWindow::UpdateQuaternionAndMatrix(const Eigen::Isometry3d &tf) {
