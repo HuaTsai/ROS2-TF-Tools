@@ -64,6 +64,11 @@ MainWindow::MainWindow(int id, QWidget *parent)
   ui->lb_img->setPixmap(QPixmap(":/conan.png")
                             .scaled(ui->lb_img->size(), Qt::KeepAspectRatio,
                                     Qt::SmoothTransformation));
+  setTabOrder(ui->le_x, ui->le_y);
+  setTabOrder(ui->le_y, ui->le_z);
+  setTabOrder(ui->le_z, ui->le_rx);
+  setTabOrder(ui->le_rx, ui->le_ry);
+  setTabOrder(ui->le_ry, ui->le_rz);
 
   InitXYZ(ui->slider_x, ui->le_x);
   InitXYZ(ui->slider_y, ui->le_y);

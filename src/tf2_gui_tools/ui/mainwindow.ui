@@ -517,6 +517,9 @@
        <property name="text">
         <string>[ 1.000, 0.000, 0.000, 0.000 ]</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
     </layout>
@@ -571,6 +574,9 @@
        <property name="text">
         <string>0.000</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
      <item row="2" column="1">
@@ -582,6 +588,9 @@
        </property>
        <property name="text">
         <string>0.000</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -595,6 +604,9 @@
        <property name="text">
         <string>0.000</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
      <item row="3" column="2">
@@ -606,6 +618,9 @@
        </property>
        <property name="text">
         <string>0.000</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -619,6 +634,9 @@
        <property name="text">
         <string>0.000</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
      <item row="0" column="3">
@@ -630,6 +648,9 @@
        </property>
        <property name="text">
         <string>0.000</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -643,6 +664,9 @@
        <property name="text">
         <string>1.000</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
      <item row="1" column="1">
@@ -654,6 +678,9 @@
        </property>
        <property name="text">
         <string>1.000</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -667,6 +694,9 @@
        <property name="text">
         <string>0.000</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
      <item row="0" column="0">
@@ -678,6 +708,9 @@
        </property>
        <property name="text">
         <string>1.000</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -691,6 +724,9 @@
        <property name="text">
         <string>0.000</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
      <item row="2" column="0">
@@ -702,6 +738,9 @@
        </property>
        <property name="text">
         <string>0.000</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -715,6 +754,9 @@
        <property name="text">
         <string>0.000</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
      <item row="2" column="2">
@@ -726,6 +768,9 @@
        </property>
        <property name="text">
         <string>1.000</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -739,6 +784,9 @@
        <property name="text">
         <string>0.000</string>
        </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+       </property>
       </widget>
      </item>
      <item row="0" column="1">
@@ -750,6 +798,9 @@
        </property>
        <property name="text">
         <string>0.000</string>
+       </property>
+       <property name="textInteractionFlags">
+        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
